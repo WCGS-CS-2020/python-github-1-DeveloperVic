@@ -10,11 +10,18 @@
 #The first number in the sequence starts at 1 (not 0).
 
 
-def fibonacci (x) :
-  #
-  # Fill in your code below
+def fibonacci (x):
+  return fib(1,1,x-3)
 
-  return 1
+
+def fib(a,b,c):
+    if c <= -1 and c > -3:
+        return 1
+    elif c == -3:
+        return 0
+    else:
+        return a + fib(b,b+a,c-1)
+    
 
 
 # 
@@ -42,13 +49,23 @@ for x in fibtest :
 #Notes
 #Remember to start at 1 and include n as the last number.
 
-def join_digits (x) :
+def join_digits (x):
+    joinstring = ""
+    for c in range (1,x+1):
+        joinstring = joinstring + str(c)
+    temp = joinstring
+    joinstring = ""
+    for c in temp:
+        joinstring = joinstring + str(c) + "-"
+    w = 1
+    temp = joinstring
+    for c in temp:
+        if w < len(temp):
+            joinstring += str(c)
+        w += 1
+    return joinstring
 
-  joinstring = ""
-  #
-  # Fill in your code below
-
-  return joinstring
+print(join_digits(11))
 
 
 # 
